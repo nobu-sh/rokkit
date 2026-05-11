@@ -14,8 +14,7 @@ time to process and optimize assets before they reach the browser.
 
 ## Does Not Own
 - Anything that runs in the browser
-- Rendering logic → `@rokkit/render`
-- Runtime asset parsing → `@rokkit/loader`
+- Rendering, asset parsing, or any runtime logic → `@rokkit/engine`
 
 If something in this package could end up in a browser bundle, it's in the wrong place.
 
@@ -25,7 +24,7 @@ If something in this package could end up in a browser bundle, it's in the wrong
 
 ### Channel Packing
 AO/Roughness/Metallic are packed into a single RGBA texture. This convention must match
-what `@rokkit/render`'s PBR shader expects:
+what `@rokkit/engine`'s PBR shader expects:
 
 ```
 R → Ambient Occlusion
@@ -37,5 +36,4 @@ A → (reserved)
 ---
 
 ## Dependencies
-- `@rokkit/loader` (optional)
 - Node.js only: `@gltf-transform/core`, `sharp`, `basisu`, etc.

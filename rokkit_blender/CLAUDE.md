@@ -45,8 +45,8 @@ Rokkit properties are embedded under `extras.rokkit` on each glTF node:
 }
 ```
 
-`@rokkit/loader` passes these through as opaque metadata. `@rokkit/engine` interprets them.
-Do not change this schema without updating both the addon and the engine.
+`@rokkit/engine` (loader layer) passes these through as opaque metadata, and the engine layer
+interprets them. Do not change this schema without updating both the addon and the engine.
 
 ---
 

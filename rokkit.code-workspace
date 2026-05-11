@@ -7,16 +7,7 @@
             "path": "game_test"
         },
         {
-            "path": "rokkit_gpu"
-        },
-        {
-            "path": "rokkit_render"
-        },
-        {
             "path": "rokkit_engine"
-        },
-        {
-            "path": "rokkit_loader"
         },
         {
             "path": "rokkit_tools"
