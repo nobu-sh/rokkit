@@ -1,5 +1,12 @@
+# Dependencies
+node_modules/
+
+# Common build artifacts
+dist/
+dist-ssr/
+
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,16 +14,28 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Environment / local overrides
+.env
+.env.local
+.env.*.local
 *.local
 
-# Editor directories and files
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor — VS Code (allow extensions.json)
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+!.vscode/settings.json
+
+# Editor — JetBrains
+.idea/
+
+# Editor — misc
 *.suo
 *.ntvs*
 *.njsproj

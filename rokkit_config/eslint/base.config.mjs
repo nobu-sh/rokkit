@@ -1,4 +1,4 @@
-import antfu from "@antfu/eslint-config";
+import antfu, { GLOB_SRC } from "@antfu/eslint-config";
 
 function deepMergeArraysOverwrite(target, source) {
   const output = { ...target };
@@ -18,9 +18,27 @@ function deepMergeArraysOverwrite(target, source) {
 }
 
 /**
+ * Antfu's javascript / typescript / jsx / react / etc. blocks ship with no `files` filter,
+ * so their rules try to run on every file ESLint encounters — including .css, which crashes
+ * rules that call JS-only APIs like `sourceCode.getAllComments`. Re-scope any unfiltered
+ * rule block to JS/TS source files so non-JS languages (e.g. `@eslint/css`) can live alongside.
+ */
+function scopeRuleBlocksToSource(blocks) {
+  return blocks.map((block) => {
+    if (!block || typeof block !== "object")
+      return block;
+    if (block.files || block.ignores)
+      return block;
+    if (!block.rules || Object.keys(block.rules).length === 0)
+      return block;
+    return { ...block, files: [GLOB_SRC] };
+  });
+}
+
+/**
  * @param  {Parameters<typeof import("@antfu/eslint-config").antfu>} args
  */
-export default function antfuExtended(...args) {
+export default async function antfuExtended(...args) {
   const [config, ...userConfigs] = args;
 
   /**
@@ -50,7 +68,7 @@ export default function antfuExtended(...args) {
     markdown: false,
   };
 
-  return antfu(
+  const resolved = await antfu(
     deepMergeArraysOverwrite(defaults, config || {}),
     // Disable JSON sorting keys. PNPM likes to reorder them and it is annoying.
     {
@@ -63,4 +81,6 @@ export default function antfuExtended(...args) {
     },
     ...userConfigs,
   );
+
+  return scopeRuleBlocksToSource(resolved);
 }

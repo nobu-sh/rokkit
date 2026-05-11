@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/*.module.css.d.ts": true,
+    "**/*.module.scss.d.ts": true,
+    "**/*.module.sass.d.ts": true
+  },
+  "search.exclude": {
+    "**/*.module.css.d.ts": true,
+    "**/*.module.scss.d.ts": true,
+    "**/*.module.sass.d.ts": true
+  }
+}

@@ -1,3 +1,4 @@
+import css from "@eslint/css";
 import js from "@eslint/js";
 import config from "@rokkit/config/eslint";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -15,6 +16,8 @@ export default config({
   },
   react: true,
 }, {
+  ignores: ["**/*.module.css.d.ts"],
+}, {
   files: ["**/*.{ts,tsx}"],
   extends: [
     js.configs.recommended,
@@ -24,5 +27,18 @@ export default config({
   ],
   languageOptions: {
     globals: globals.browser,
+  },
+}, {
+  files: ["**/*.css"],
+  language: "css/css",
+  plugins: { css },
+  languageOptions: {
+    tolerant: true,
+  },
+  rules: {
+    ...css.configs.recommended.rules,
+    "css/prefer-logical-properties": "warn",
+    "css/relative-font-units": ["warn", { allowUnits: ["rem", "em", "%"] }],
+    "css/selector-complexity": "warn",
   },
 });
