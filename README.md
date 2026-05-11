@@ -1,4 +1,4 @@
-# Rokkit
+# Rokkit 🚀
 
 WIP WebGPU-based game engine with Blender as the editor integration.
 
