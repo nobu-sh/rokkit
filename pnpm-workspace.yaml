@@ -1,0 +1,8 @@
+packages:
+  # All packages have the prefix 'rokkit_'
+  - 'rokkit_*'
+
+  # Any "Games" should have the prefix 'game_'
+  # This should only be for test projects or examples.
+  - 'game_*'
+

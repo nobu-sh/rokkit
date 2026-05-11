@@ -1,0 +1,23 @@
+{
+  "name": "@rokkit/config",
+  "private": true,
+  "version": "0.0.0",
+  "exports": {
+    "./tsup/app": {
+      "types": "./tsup/app.config.d.mts",
+      "import": "./tsup/app.config.mjs"
+    },
+    "./eslint": {
+      "types": "./eslint/base.config.d.mts",
+      "import": "./eslint/base.config.mjs"
+    },
+    "./typescript/*": "./typescript/*"
+  },
+  "files": [
+    "eslint/**",
+    "tsup/**",
+    "typescript/**"
+  ],
+  "dependencies": {
+  }
+}

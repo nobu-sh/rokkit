@@ -1,0 +1,70 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "game_test"
+        },
+        {
+            "path": "rokkit_gpu"
+        },
+        {
+            "path": "rokkit_render"
+        },
+        {
+            "path": "rokkit_engine"
+        },
+        {
+            "path": "rokkit_loader"
+        },
+        {
+            "path": "rokkit_tools"
+        },
+        {
+            "path": "rokkit_blender"
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/node_modules": true,
+            "**/dist": true,
+        },
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "eslint.format.enable": true,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "files.eol": "\n",
+        "typescript.preferences.importModuleSpecifier": "non-relative",
+        "prettier.enable": false,
+        "editor.formatOnSave": false,
+
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "explicit",
+            "source.organizeImports": "never"
+        },
+        "eslint.validate": [
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "vue",
+            "html",
+            "markdown",
+            "json",
+            "jsonc",
+            "yaml",
+            "toml",
+            "xml",
+            "gql",
+            "graphql",
+            "astro",
+            "svelte",
+            "css",
+            "less",
+            "scss",
+            "pcss",
+            "postcss"
+        ]
+    },
+}
