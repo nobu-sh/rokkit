@@ -18,8 +18,16 @@
     ],
     "settings": {
         "files.exclude": {
+            // Dependencies
             "**/node_modules": true,
+
+            // Build Artifacts
             "**/dist": true,
+
+            // Generated Artifacts
+            "**/*.module.css.d.ts": true,
+            "**/*.module.scss.d.ts": true,
+            "**/*.module.sass.d.ts": true
         },
         "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "eslint.format.enable": true,
